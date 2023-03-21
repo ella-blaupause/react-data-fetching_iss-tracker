@@ -20,7 +20,7 @@ export default function ISSTracker() {
     return res.json();
   };
 
-  const { data, error, isLoading, isValidating, mutate } = useSWR(URL, fetcher);
+  const { data, error, isLoading, mutate } = useSWR(URL, fetcher);
   console.log(data);
   if (error) return <div>failed to load: {error.info.error}</div>;
   if (isLoading) return <div>loading...</div>;
